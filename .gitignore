@@ -1,0 +1,209 @@
+# ============================================================
+# .gitignore — disc-questionnaire
+# Python (calcul_disc.py) + React/Vite/TypeScript (disc/)
+# ============================================================
+
+# ---------- Logs & temporaires ----------
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+npm-error.log*
+logs/
+*.tmp
+*.temp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---------- Variables d'environnement ----------
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+
+# ---------- Python ----------
+# Byte-compiled / optimized / DLLs
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.spec
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Jupyter
+.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# pytest / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.cache
+
+# mypy / linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# IDE Python
+.idea/
+.vscode/
+*.code-workspace
+
+# ---------- Node / npm / yarn / pnpm ----------
+node_modules/
+.npm/
+.yarn/
+.pnp/
+.pnp.js
+.pnp.cjs
+.pnp.loader.mjs
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.eslintcache
+.stylelintcache
+.npmrc
+
+# ---------- TypeScript / Vite / React ----------
+# Outputs de build
+dist/
+build/
+out/
+.vite/
+*.tsbuildinfo
+
+# Next.js / Nuxt (au cas où)
+.next/
+.nuxt/
+.nitro/
+.cache/
+
+# Fichiers générés
+*.tgz
+*.tar.gz
+
+# ---------- IDEs / Editeurs ----------
+# VS Code (déjà couvert plus haut)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# JetBrains (IntelliJ, WebStorm, PyCharm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Emacs
+*~
+*.swp
+*.swo
+\#*\#
+.\#*
+
+# ---------- OS ----------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+$RECYCLE.BIN/
+Desktop.ini
+
+# Linux
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+# ---------- Tests & coverage frontend ----------
+coverage/
+.nyc_output/
+*.lcov
+
+# ---------- Fichiers de sortie / résultats ----------
+# Résultats générés par le test DISC (si jamais exportés)
+results/
+resultats/
+*.csv
+!*.example.csv
+*.xlsx
+!*.example.xlsx
+
+# ---------- Divers ----------
+# Fichiers d'archive
+*.7z
+*.dmg
+*.iso
+*.jar
+*.rar
+*.zip
+
+# Service workers / PWA (si générés)
+service-worker.js
+workbox-*.js

@@ -1,0 +1,527 @@
+[
+{
+"id": 1,
+"o": [
+[
+"Prudent et réfléchi",
+"C"
+],
+[
+"Loyal et attentif à autrui",
+"S"
+],
+[
+"Influent et démonstratif",
+"I"
+],
+[
+"Stratège et entreprenant",
+"D"
+]
+]
+},
+{
+"id": 2,
+"o": [
+[
+"Sociable et familier",
+"I"
+],
+[
+"Honnête et discret",
+"S"
+],
+[
+"Énergique et orienté vers le résultat",
+"D"
+],
+[
+"Méthodique et logique",
+"C"
+]
+]
+},
+{
+"id": 3,
+"o": [
+[
+"Calme et d'humeur égale",
+"S"
+],
+[
+"Déterminé et aimant diriger",
+"D"
+],
+[
+"Enjoué et rayonnant",
+"I"
+],
+[
+"Formaliste et factuel",
+"C"
+]
+]
+},
+{
+"id": 4,
+"o": [
+[
+"Sûr de lui et volontaire",
+"D"
+],
+[
+"Ordonné et concis",
+"C"
+],
+[
+"Familier et stable",
+"S"
+],
+[
+"Loquace et de bonne humeur",
+"I"
+]
+]
+},
+{
+"id": 5,
+"o": [
+[
+"Perspicace et impartial",
+"C"
+],
+[
+"Exigeant et direct",
+"D"
+],
+[
+"Constant et attaché aux valeurs",
+"S"
+],
+[
+"Actif et liant",
+"I"
+]
+]
+},
+{
+"id": 6,
+"o": [
+[
+"Accommodant et serviable",
+"S"
+],
+[
+"Plein d'espoir et expressif",
+"I"
+],
+[
+"Puissant et sûr de lui",
+"D"
+],
+[
+"Pensif et maître de soi",
+"C"
+]
+]
+},
+{
+"id": 7,
+"o": [
+[
+"Ouvert et persuasif",
+"I"
+],
+[
+"Appliqué et discret dans ses relations",
+"S"
+],
+[
+"Ferme et entreprenant",
+"D"
+],
+[
+"Posé et analytique",
+"C"
+]
+]
+},
+{
+"id": 8,
+"o": [
+[
+"Déterminé et résolu",
+"D"
+],
+[
+"Avenant et loyal",
+"S"
+],
+[
+"Sensible et amical",
+"I"
+],
+[
+"Logique et correct",
+"C"
+]
+]
+},
+{
+"id": 9,
+"o": [
+[
+"Compatissant et diplomate",
+"S"
+],
+[
+"Précis et mesuré",
+"C"
+],
+[
+"Encourageant et ouvert aux idées",
+"I"
+],
+[
+"Orienté résultat et rapidité",
+"D"
+]
+]
+},
+{
+"id": 10,
+"o": [
+[
+"Responsable et ferme",
+"D"
+],
+[
+"Réservé et coopératif",
+"S"
+],
+[
+"Expansif et imaginatif",
+"I"
+],
+[
+"Méticuleux et minutieux",
+"C"
+]
+]
+},
+{
+"id": 11,
+"o": [
+[
+"Esprit d'équipe et spontané",
+"I"
+],
+[
+"Contrôlé et rationnel",
+"C"
+],
+[
+"Aimable et prévenant",
+"S"
+],
+[
+"Opiniâtre et visant le résultat",
+"D"
+]
+]
+},
+{
+"id": 12,
+"o": [
+[
+"Analyste et sceptique",
+"C"
+],
+[
+"Amical et divertissant",
+"I"
+],
+[
+"Exigeant et solide",
+"D"
+],
+[
+"Modeste et fidèle",
+"S"
+]
+]
+},
+{
+"id": 13,
+"o": [
+[
+"Attaché à ses proches et calme",
+"S"
+],
+[
+"Affectif et confiant",
+"I"
+],
+[
+"Observateur et distant",
+"C"
+],
+[
+"Actif et contrôlant",
+"D"
+]
+]
+},
+{
+"id": 14,
+"o": [
+[
+"Volontaire et tenace",
+"D"
+],
+[
+"Conforme et sans parti pris",
+"C"
+],
+[
+"Enthousiaste et attachant",
+"I"
+],
+[
+"Impliqué et consensuel",
+"S"
+]
+]
+},
+{
+"id": 15,
+"o": [
+[
+"Formel et à principe",
+"C"
+],
+[
+"Jovial et populaire",
+"I"
+],
+[
+"Modérateur et apaisant",
+"S"
+],
+[
+"Ferme et tranchant",
+"D"
+]
+]
+},
+{
+"id": 16,
+"o": [
+[
+"Animé et persuasif",
+"I"
+],
+[
+"Décideur et pressé",
+"D"
+],
+[
+"Analytique et aimant la discipline",
+"C"
+],
+[
+"Tolérant et calme",
+"S"
+]
+]
+},
+{
+"id": 17,
+"o": [
+[
+"Patient et empathique",
+"S"
+],
+[
+"Logique et mesuré",
+"C"
+],
+[
+"Orienté résultat et prêt au défi",
+"D"
+],
+[
+"Ouvert aux idées et arrangeant",
+"I"
+]
+]
+},
+{
+"id": 18,
+"o": [
+[
+"Influent et décontracté",
+"I"
+],
+[
+"Discret et philosophe",
+"S"
+],
+[
+"Réfléchi et circonspect",
+"C"
+],
+[
+"Opiniâtre et déterminé",
+"D"
+]
+]
+},
+{
+"id": 19,
+"o": [
+[
+"Axé procédures et bien préparé",
+"C"
+],
+[
+"Courageux et autonome",
+"D"
+],
+[
+"Extraverti et communicatif",
+"I"
+],
+[
+"Bienveillant et de bon conseil",
+"S"
+]
+]
+},
+{
+"id": 20,
+"o": [
+[
+"Puissant et clair",
+"D"
+],
+[
+"Spontané et vif",
+"I"
+],
+[
+"Studieux et raisonné",
+"C"
+],
+[
+"Paisible et aimant l'harmonie",
+"S"
+]
+]
+},
+{
+"id": 21,
+"o": [
+[
+"Organisé et prudent",
+"C"
+],
+[
+"Patient et serviable",
+"S"
+],
+[
+"Argumenté et sûr de lui",
+"D"
+],
+[
+"Interactif et ouvert",
+"I"
+]
+]
+},
+{
+"id": 22,
+"o": [
+[
+"Indépendant et audacieux",
+"D"
+],
+[
+"Souple et harmonieux",
+"S"
+],
+[
+"Factuel et respectueux des normes",
+"C"
+],
+[
+"Aimable et vivant",
+"I"
+]
+]
+},
+{
+"id": 23,
+"o": [
+[
+"Démonstratif et enthousiaste",
+"I"
+],
+[
+"Directif et réaliste",
+"D"
+],
+[
+"Compatissant et prévenant",
+"S"
+],
+[
+"Attentif et soucieux du détail",
+"C"
+]
+]
+},
+{
+"id": 24,
+"o": [
+[
+"Stable et altruiste",
+"S"
+],
+[
+"Objectif et hardi",
+"D"
+],
+[
+"Consciencieux et introspectif",
+"C"
+],
+[
+"Sociable et bon vivant",
+"I"
+]
+]
+},
+{
+"id": 25,
+"o": [
+[
+"Détaillé et perfectionniste",
+"C"
+],
+[
+"Direct et carré",
+"D"
+],
+[
+"Expressif et radieux",
+"I"
+],
+[
+"Tolérant et ferme",
+"S"
+]
+]
+}
+]
