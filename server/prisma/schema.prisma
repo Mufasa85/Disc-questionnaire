@@ -1,4 +1,4 @@
-// Schéma Prisma pour le questionnaire DISC
+// Schema Prisma pour le questionnaire DISC
 // Documentation : https://pris.ly/d/prisma-schema
 
 generator client {
@@ -11,7 +11,6 @@ datasource db {
 }
 
 /// Une soumission de questionnaire DISC complete
-/// Stocke les informations personnelles, les reponses, et les scores calcules
 model Submission {
   id              Int      @id @default(autoincrement())
   createdAt       DateTime @default(now()) @map("created_at")
@@ -26,15 +25,11 @@ model Submission {
   email           String?
 
   // Profil calcule
-  /// Profil dominant : D, I, S ou C
   dominantProfile String   @map("dominant_profile") @db.VarChar(2)
-  /// Code du profil : ex "DI", "IS", "SC"...
   code            String   @db.VarChar(2)
 
-  // Donnees brutes (stockees en JSON)
-  /// Reponses par question : { "1": "a", "2": "b", ... }
+  // Donnees brutes (JSON)
   answers         Json
-  /// Scores par profil : { "D": 5, "I": 10, "S": 7, "C": 3 }
   scores          Json
 
   // Metadonnees
@@ -46,4 +41,16 @@ model Submission {
   @@index([dominantProfile])
   @@index([nom])
   @@map("submissions")
+}
+
+/// Compte administrateur
+model Admin {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  name         String
+  passwordHash String    @map("password_hash")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  lastLoginAt  DateTime? @map("last_login_at")
+
+  @@map("admins")
 }
