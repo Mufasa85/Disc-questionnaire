@@ -7,12 +7,16 @@ import { submitQuestionnaire } from '../services/api'
 
 const msgs = ['Analyse du profil DISC...', 'Préparation du rapport...', 'Enregistrement des réponses...']
 export default function Submitting() {
-  const { info, answers, questions, setStep, setResult } = useDisc()
+  const { info, answers, questions, setStep, setResult, quizStartedAt } = useDisc()
   const [i, setI] = useState(0)
   useEffect(() => {
     const t = setInterval(() => setI((n) => Math.min(n + 1, 2)), 1300)
     const min = new Promise((r) => setTimeout(r, 3900))
-    Promise.all([submitQuestionnaire(info!, answers, questions), min])
+    // Calcule la duree en secondes
+    const durationSeconds = quizStartedAt
+      ? Math.round((Date.now() - quizStartedAt) / 1000)
+      : undefined
+    Promise.all([submitQuestionnaire(info!, answers, questions, durationSeconds), min])
       .then(([r]) => { setResult(r); toast.success('Réponses enregistrées'); setStep('success') })
       .catch(() => { toast.error("Échec de l'envoi. Réessayez."); setStep('summary') })
     return () => clearInterval(t)

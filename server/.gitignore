@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Variables d'environnement (contient des secrets)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Prisma
+# Ne pas ignorer prisma/ car on commit les migrations
+# Mais ignorer le client genere
+prisma/*.db
+prisma/*.db-journal
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store

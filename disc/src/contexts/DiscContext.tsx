@@ -3,21 +3,39 @@ import type { Answers, PersonalInfo, Question, Step, Submission } from '../types
 import { getQuestions } from '../services/api'
 
 const KEY = 'disc-state-v1'
-interface Saved { step: Step; info: PersonalInfo | null; answers: Answers; current: number }
+interface Saved {
+  step: Step
+  info: PersonalInfo | null
+  answers: Answers
+  current: number
+  /** Timestamp (ms) du debut du quiz, pour calculer la duree */
+  quizStartedAt: number | null
+}
 interface Ctx extends Saved {
   questions: Question[]
   result: Submission | null; setResult: (r: Submission) => void
   setStep: (s: Step) => void; setInfo: (i: PersonalInfo) => void
   setAnswer: (qid: number, oid: string) => void; setCurrent: (n: number) => void; reset: () => void
+  /** Demarre le chrono du quiz (appele une seule fois) */
+  startQuizTimer: () => void
 }
 const DiscContext = createContext<Ctx | null>(null)
 
 function load(): Saved {
   try {
     const s = JSON.parse(localStorage.getItem(KEY) ?? '')
-    const step: Step = ['info', 'quiz', 'summary'].includes(s.step) ? s.step : 'splash'
-    return { ...s, step: 'splash', resume: step } as Saved
-  } catch { return { step: 'splash', info: null, answers: {}, current: 0 } }
+    const step: Step = ['intro', 'info', 'quiz', 'summary'].includes(s.step) ? s.step : 'splash'
+    return {
+      step: 'splash',
+      info: s.info || null,
+      answers: s.answers || {},
+      current: s.current || 0,
+      quizStartedAt: s.quizStartedAt || null,
+      resume: step,
+    } as Saved
+  } catch {
+    return { step: 'splash', info: null, answers: {}, current: 0, quizStartedAt: null }
+  }
 }
 
 export function DiscProvider({ children }: { children: ReactNode }) {
@@ -32,10 +50,19 @@ export function DiscProvider({ children }: { children: ReactNode }) {
   const patch = (p: Partial<Saved>) => setState((s) => ({ ...s, ...p }))
   const value: Ctx = {
     ...state, questions, result, setResult,
-    setStep: (step) => patch({ step }), setInfo: (info) => patch({ info }),
+    setStep: (step) => patch({ step }),
+    setInfo: (info) => patch({ info }),
     setAnswer: (q, o) => setState((s) => ({ ...s, answers: { ...s.answers, [q]: o } })),
     setCurrent: (current) => patch({ current }),
-    reset: () => { localStorage.removeItem(KEY); setResult(null); setState({ step: 'home', info: null, answers: {}, current: 0 }) },
+    startQuizTimer: () => {
+      // Ne demarre le chrono qu'une seule fois par session
+      setState((s) => s.quizStartedAt ? s : { ...s, quizStartedAt: Date.now() })
+    },
+    reset: () => {
+      localStorage.removeItem(KEY)
+      setResult(null)
+      setState({ step: 'home', info: null, answers: {}, current: 0, quizStartedAt: null })
+    },
   }
   return <DiscContext.Provider value={value}>{children}</DiscContext.Provider>
 }
