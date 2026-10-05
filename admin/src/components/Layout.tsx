@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
-import { LayoutDashboard, ListChecks, LogOut, Shield } from 'lucide-react'
+import { LayoutDashboard, ListChecks, LogOut } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 
 const NAV = [
@@ -14,9 +14,6 @@ export function Layout() {
       {/* === Sidebar === */}
       <aside className="border-b border-line bg-white lg:border-b-0 lg:border-r">
         <div className="flex items-center gap-3 border-b border-line px-6 py-5">
-          <div className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-brand to-navy text-white shadow">
-            <Shield size={20} />
-          </div>
           <div>
             <p className="text-sm font-bold text-navy">Admin DISC</p>
             <p className="text-xs text-ink/60">{admin?.name}</p>

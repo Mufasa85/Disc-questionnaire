@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Shield, Mail, Lock, Loader2 } from 'lucide-react'
+import { Mail, Lock, Loader2 } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 
 export function Login() {
@@ -29,9 +29,6 @@ export function Login() {
     <div className="grid min-h-dvh place-items-center bg-gradient-to-br from-navy via-brand to-navy p-4">
       <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/95 p-8 shadow-2xl backdrop-blur sm:p-10">
         <div className="mb-6 text-center">
-          <div className="mx-auto mb-4 grid size-14 place-items-center rounded-2xl bg-gradient-to-br from-brand to-navy text-white shadow-lg">
-            <Shield size={28} />
-          </div>
           <h1 className="text-2xl font-bold text-navy">Espace administrateur</h1>
           <p className="mt-1 text-sm text-ink/60">Questionnaire DISC</p>
         </div>
