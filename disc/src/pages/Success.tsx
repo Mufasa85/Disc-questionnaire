@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Confetti from 'react-confetti'
 import { motion } from 'framer-motion'
-import { CheckCircle, Home } from 'lucide-react'
+import { CheckCircle, Home } from '../components/Icons'
 import { Card } from '../components/UI/Card'
 import { Button } from '../components/UI/Button'
 import { useDisc } from '../contexts/DiscContext'

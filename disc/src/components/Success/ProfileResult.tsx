@@ -1,100 +1,8 @@
 import { motion } from 'framer-motion'
-import { Award, AlertTriangle, MessageCircle, Sparkles, TrendingUp } from 'lucide-react'
+import { Award, AlertTriangle, MessageCircle, Sparkles, TrendingUp } from '../../components/Icons'
 import type { Profile } from '../../types'
 import { PROFILES, dominant } from '../../utils/profiles'
-
-/**
- * Radar chart SVG dessiné a la main (pas de dependance externe).
- * 4 axes : D, I, S, C.
- */
-function RadarChart({ scores }: { scores: Record<Profile, number> }) {
-  const size = 280
-  const cx = size / 2
-  const cy = size / 2
-  const radius = size / 2 - 50
-  const max = 25
-
-  const keys: Profile[] = ['D', 'I', 'S', 'C']
-  const points = keys.map((k, i) => {
-    const angle = (Math.PI * 2 * i) / keys.length - Math.PI / 2
-    const value = Math.min(scores[k] / max, 1)
-    const r = radius * value
-    const x = cx + r * Math.cos(angle)
-    const y = cy + r * Math.sin(angle)
-    return { x, y, angle, key: k, value: scores[k] }
-  })
-  const polygonPoints = points.map((p) => p.x + ',' + p.y).join(' ')
-
-  const rings = [0.25, 0.5, 0.75, 1].map((ratio) => (
-    <circle
-      key={ratio}
-      cx={cx}
-      cy={cy}
-      r={radius * ratio}
-      fill="none"
-      stroke="#E5E7EB"
-      strokeWidth={1}
-      strokeDasharray={ratio === 1 ? undefined : '2 4'}
-    />
-  ))
-
-  const axes = keys.map((k, i) => {
-    const angle = (Math.PI * 2 * i) / keys.length - Math.PI / 2
-    const x2 = cx + radius * Math.cos(angle)
-    const y2 = cy + radius * Math.sin(angle)
-    return <line key={k} x1={cx} y1={cy} x2={x2} y2={y2} stroke="#E5E7EB" strokeWidth={1} />
-  })
-
-  const labels = points.map((p) => {
-    const labelRadius = radius + 30
-    const x = cx + labelRadius * Math.cos(p.angle)
-    const y = cy + labelRadius * Math.sin(p.angle)
-    const profile = PROFILES[p.key]
-    return (
-      <g key={p.key}>
-        <text x={x} y={y - 6} textAnchor="middle" style={{ fontSize: 24 }}>{profile.emoji}</text>
-        <text x={x} y={y + 14} textAnchor="middle" className="fill-navy" style={{ fontSize: 11, fontWeight: 600 }}>
-          {p.key} - {p.value}
-        </text>
-      </g>
-    )
-  })
-
-  return (
-    <div className="mx-auto w-full max-w-sm">
-      <svg viewBox={'0 0 ' + size + ' ' + size} className="w-full" role="img" aria-label="Graphique radar du profil DISC">
-        {rings}
-        {axes}
-        <motion.polygon
-          fill="rgba(0, 87, 184, 0.15)"
-          stroke="#0057B8"
-          strokeWidth={2.5}
-          strokeLinejoin="round"
-          points={polygonPoints}
-          initial={{ opacity: 0, scale: 0.4 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          style={{ transformOrigin: cx + 'px ' + cy + 'px' }}
-        />
-        {points.map((p, i) => (
-          <motion.circle
-            key={i}
-            cx={p.x}
-            cy={p.y}
-            r={5}
-            fill={PROFILES[p.key].color}
-            stroke="white"
-            strokeWidth={2}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.5 + i * 0.1, type: 'spring' }}
-          />
-        ))}
-        {labels}
-      </svg>
-    </div>
-  )
-}
+import { DiscRadarChart } from './DiscRadarChart'
 
 export function ProfileResult({ scores }: { scores: Record<Profile, number> }) {
   const total = Object.values(scores).reduce((a, b) => a + b, 0) || 1
@@ -125,7 +33,7 @@ export function ProfileResult({ scores }: { scores: Record<Profile, number> }) {
       </div>
 
       <div className="mb-6 rounded-2xl bg-gradient-to-br from-surface to-white p-4">
-        <RadarChart scores={scores} />
+        <DiscRadarChart scores={scores} />
       </div>
 
       <div className="space-y-3">

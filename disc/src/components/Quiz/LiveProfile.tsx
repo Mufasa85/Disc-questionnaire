@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Activity, Eye, EyeOff } from 'lucide-react'
+import { Activity, Eye, EyeOff } from '../../components/Icons'
 import type { Profile } from '../../types'
 import { PROFILES, dominant, computeLiveScores } from '../../utils/profiles'
 import type { Question, Answers } from '../../types'

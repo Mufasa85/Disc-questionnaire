@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ChevronRight, ChevronLeft, User, ListChecks, Sparkles, Clock, Target } from 'lucide-react'
+import { ChevronRight, ChevronLeft, User, ListChecks, Sparkles, Clock, Target } from '../components/Icons'
 import { Card } from '../components/UI/Card'
 import { Button } from '../components/UI/Button'
 import { useDisc } from '../contexts/DiscContext'

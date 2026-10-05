@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft, Mail, Phone, Calendar, User, Trash2, Loader2 } from 'lucide-react'
+import { ArrowLeft, Mail, Phone, Calendar, User, Trash2, Loader2 } from '../components/Icons'
 import { api, PROFILE_META, type Submission } from '../lib/api'
 
 function ProfileRadar({ scores }: { scores: Record<string, number> }) {

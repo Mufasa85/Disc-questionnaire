@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Users, Clock, Trophy, TrendingUp } from 'lucide-react'
+import { Users, Clock, Trophy, TrendingUp } from '../components/Icons'
 import { api, PROFILE_META, type Stats } from '../lib/api'
 
 function formatDuration(s: number | null): string {

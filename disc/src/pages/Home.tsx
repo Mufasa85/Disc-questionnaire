@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ClipboardList, ChevronRight, History, Shield, Zap, Users } from 'lucide-react'
+import { ClipboardList, ChevronRight, History, Shield, Zap, Users } from '../components/Icons'
 import { Button } from '../components/UI/Button'
 import { useDisc } from '../contexts/DiscContext'
 

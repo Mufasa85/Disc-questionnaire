@@ -1,10 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Clock, Keyboard } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Clock, Keyboard } from '../components/Icons'
 import { Card } from '../components/UI/Card'
 import { Button } from '../components/UI/Button'
 import { ProgressBar } from '../components/Progress/ProgressBar'
-import { LiveProfile } from '../components/Quiz/LiveProfile'
 import { useDisc } from '../contexts/DiscContext'
 import { useBeforeUnload } from '../hooks/useBeforeUnload'
 import { useQuizTimer } from '../hooks/useQuizTimer'
@@ -52,17 +51,12 @@ export default function Questionnaire() {
     onPrev: () => (current === 0 ? setStep('info') : setCurrent(current - 1)),
   })
 
-  // 👁️ Affichage/masquage des scores en direct
-  const [liveVisible, setLiveVisible] = useState(true)
-
   if (!q) {
     return <div className="h-64 w-full animate-pulse rounded-3xl bg-line" aria-busy />
   }
 
   return (
-    <div className="grid w-full gap-5 lg:grid-cols-[1fr_280px]">
-      {/* === Colonne principale === */}
-      <div className="w-full space-y-5">
+    <div className="w-full space-y-5">
         {/* Barre de progression enrichie */}
         <div className="space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-medium text-navy">
@@ -166,17 +160,6 @@ export default function Questionnaire() {
             </Button>
           </div>
         </div>
-      </div>
-
-      {/* === Sidebar : profil en direct === */}
-      <aside className="lg:sticky lg:top-6 lg:self-start">
-        <LiveProfile
-          questions={questions}
-          answers={answers}
-          visible={liveVisible}
-          onToggle={() => setLiveVisible((v) => !v)}
-        />
-      </aside>
     </div>
   )
 }

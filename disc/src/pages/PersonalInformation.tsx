@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { ChevronRight, User } from 'lucide-react'
+import { ChevronRight, User } from '../components/Icons'
 import { Card } from '../components/UI/Card'
 import { Button } from '../components/UI/Button'
 import { Input } from '../components/UI/Input'

@@ -19,6 +19,14 @@ logs/
 *.swp
 .DS_Store
 Thumbs.db
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ---------- Vercel ----------
+.vercel
 
 # ---------- Variables d'environnement ----------
 .env
@@ -43,8 +51,11 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
+# lib/ et lib64/ ignores uniquement Python (a la racine)
+# Mais on garde les dossiers lib/ des sous-projets (admin/src/lib, etc.)
+# donc on utilise /lib/ et /lib64/ pour ne matcher que la racine
+/lib/
+/lib64/
 parts/
 sdist/
 var/

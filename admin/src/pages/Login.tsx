@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Mail, Lock, Loader2 } from 'lucide-react'
+import { Mail, Lock, Loader2 } from '../components/Icons'
 import { useAuth } from '../contexts/AuthContext'
 
 export function Login() {

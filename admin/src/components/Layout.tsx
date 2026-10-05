@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
-import { LayoutDashboard, ListChecks, LogOut } from 'lucide-react'
+import { LayoutDashboard, ListChecks, LogOut } from './Icons'
 import { useAuth } from '../contexts/AuthContext'
 
 const NAV = [

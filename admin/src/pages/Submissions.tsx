@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, Trash2, Eye, ChevronLeft, ChevronRight, Loader2 } from 'lucide-react'
+import { Search, Trash2, Eye, ChevronLeft, ChevronRight, Loader2 } from '../components/Icons'
 import { api, PROFILE_META, type Submission } from '../lib/api'
 
 const PAGE_SIZE = 20

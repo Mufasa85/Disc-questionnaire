@@ -1,4 +1,4 @@
-import { Pencil, RotateCcw, Send } from 'lucide-react'
+import { Pencil, RotateCcw, Send } from '../components/Icons'
 import { Card } from '../components/UI/Card'
 import { Button } from '../components/UI/Button'
 import { useDisc } from '../contexts/DiscContext'
