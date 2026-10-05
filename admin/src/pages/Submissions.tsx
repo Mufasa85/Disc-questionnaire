@@ -5,21 +5,21 @@ import { api, PROFILE_META, type Submission } from '../lib/api'
 
 const PAGE_SIZE = 20
 
-function formatDate(s: string) {
+function formatDate(s: string): string {
   const d = new Date(s)
   return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' })
 }
 
-function formatTime(s: string) {
+function formatTime(s: string): string {
   const d = new Date(s)
   return d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
 }
 
-function formatDuration(s: number | null) {
+function formatDuration(s: number | null): string {
   if (!s) return '—'
   const m = Math.floor(s / 60)
   const sec = s % 60
-  return m > 0 ? m + 'm ' + sec + 's' : sec + 's'
+  return m > 0 ? `${m}m ${sec}s` : `${sec}s`
 }
 
 export function Submissions() {
@@ -38,7 +38,7 @@ export function Submissions() {
     try {
       const res = await api.listSubmissions({
         q: params.q !== undefined ? params.q : q,
-        profile: (params.profile !== undefined ? params.profile : profile) as any,
+        profile: (params.profile !== undefined ? params.profile : profile) as 'D' | 'I' | 'S' | 'C' | '' | undefined,
         limit: PAGE_SIZE,
         offset: params.offset !== undefined ? params.offset : offset,
       })
